@@ -10,7 +10,8 @@ async function main(){
     let dadosProcessados = Processor.Process(dados)
     
     var usuarios = new Table(dadosProcessados)
-    console.log(usuarios.rows)
+    console.log(usuarios.RowCont)
+    console.log(usuarios.ColCont)
 
 }
 
