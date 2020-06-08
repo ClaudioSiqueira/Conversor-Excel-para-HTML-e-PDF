@@ -3,6 +3,7 @@ let Processor = require('./Processor')
 let Table = require('./Table')
 let HtmlParser = require('./htmlParser')
 let Writer = require('./Writer')
+let PDFWriter = require('./PDFWriter')
 
 
 let leitor = new Reader()
@@ -16,7 +17,7 @@ async function main(){
     var usuarios = new Table(dadosProcessados)
     let html = await HtmlParser.Parse(usuarios)
     escritor.writer(Date.now() + '.html', html)
-
+    PDFWriter.WritePDF(Date.now() + '.pdf', html)
 }
 
 
