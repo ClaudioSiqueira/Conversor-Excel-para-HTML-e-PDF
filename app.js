@@ -1,6 +1,7 @@
 let Reader = require('./Reader')
 let Processor = require('./Processor')
 let Table = require('./Table')
+let HtmlParser = require('./htmlParser')
 
 let leitor = new Reader()
 
@@ -10,8 +11,8 @@ async function main(){
     let dadosProcessados = Processor.Process(dados)
     
     var usuarios = new Table(dadosProcessados)
-    console.log(usuarios.RowCont)
-    console.log(usuarios.ColCont)
+    let html = await HtmlParser.Parse(usuarios)
+    console.log(html)
 
 }
 
